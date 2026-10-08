@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PriceIQ · Pricing Intelligence</title>
+  <meta name="description" content="PriceIQ — interactive prototype of an AI-powered pricing optimization engine for consumer & retail intelligence. Illustrative analytics on synthetic data.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <!-- Plotly (basic bundle: scatter, bar, pie) and Lucide icons from public CDNs -->
+  <script src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js" charset="utf-8" defer></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
+  <!-- Single classic script (built from js/ modules by tools/build_bundle.py) so the app
+       works both from a web host and when index.html is opened directly from disk. -->
+  <script src="js/priceiq.bundle.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#view">Skip to main content</a>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation"></aside>
+    <div class="mobile-scrim" onclick="document.body.classList.remove('mobile-nav-open')"></div>
+    <div class="main">
+      <header class="app-header" id="header"></header>
+      <main class="view" id="view" tabindex="-1">
+        <div id="boot-loader" class="boot-loader" role="status" aria-label="Loading PriceIQ">
+          <img src="assets/images/favicon.svg" width="40" height="40" alt="">
+          <div class="boot-bar"><span></span></div>
+        </div>
+      </main>
+      <footer class="app-footer">
+        <span>PriceIQ · Interactive prototype for the NIQ hackathon</span>
+        <span>Synthetic data · Illustrative analytics · Not financial advice</span>
+      </footer>
+    </div>
+  </div>
+  <div id="modal-root" class="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+  <noscript><p style="padding:24px">PriceIQ requires JavaScript.</p></noscript>
+</body>
+</html>
