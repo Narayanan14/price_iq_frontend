@@ -27,15 +27,6 @@ export default {
             <div id="cp-context"></div>
           </section>
           <section class="card">
-            ${cardHeader('How this demo works')}
-            <ol class="how-list">
-              <li>${icon('route')}<span>A lightweight <strong>intent router</strong> classifies your question (no LLM is connected).</span></li>
-              <li>${icon('cpu')}<span>It calls the <strong>same services</strong> as every page — optimizer, simulator, segmentation, portfolio analytics.</span></li>
-              <li>${icon('message-square-text')}<span>Responses are assembled from those calculated values, so numbers always match the dashboards.</span></li>
-            </ol>
-            <p class="muted small">In the production design, an LLM (e.g. Gemini or Claude) would call these services as tools.</p>
-          </section>
-          <section class="card">
             ${cardHeader('Supported intents')}
             <div class="intent-tags">${INTENTS.map((i) => `<span class="intent-tag">${i}</span>`).join('')}</div>
           </section>

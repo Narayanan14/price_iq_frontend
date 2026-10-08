@@ -42,7 +42,7 @@ export default {
       <section class="card kpi-panel" id="ov-kpis"><div class="kpi-grid">${skeletonCards(6)}</div></section>
       <div class="grid grid-12">
         <section class="card span-8">
-          ${cardHeader('Revenue & Gross Profit Trend', 'Synthetic historical sales · aggregated from product × week × segment records', segmented('ov-gran', [{ value: 'week', label: 'Weekly' }, { value: 'month', label: 'Monthly' }], local.granularity))}
+          ${cardHeader('Revenue & Gross Profit Trend', 'Historical sales · aggregated from product × week × segment records', segmented('ov-gran', [{ value: 'week', label: 'Weekly' }, { value: 'month', label: 'Monthly' }], local.granularity))}
           <div class="chart chart-lg" id="ov-trend"><div class="chart-skeleton"></div></div>
         </section>
         <section class="card span-4">
@@ -51,7 +51,7 @@ export default {
         </section>
       </div>
       <section class="card">
-        ${cardHeader('Key Insights', 'Computed from the synthetic dataset and the shared pricing engine')}
+        ${cardHeader('Key Insights')}
         <div class="insight-cards" id="ov-insights"></div>
       </section>
       <section class="card">
@@ -89,7 +89,7 @@ function bindControls() {
     setTimeout(() => {
       renderAll();
       btn.classList.remove('spinning');
-      toast('Analytics recomputed from the synthetic dataset.');
+      toast('Analytics recomputed from the dataset.');
     }, 250);
   });
   el.querySelector('#ov-gran').addEventListener('click', (e) => {

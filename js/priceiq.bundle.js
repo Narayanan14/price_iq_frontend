@@ -2029,15 +2029,6 @@ __pq_define('pages/copilot.js', function (__exports) {
               <div id="cp-context"></div>
             </section>
             <section class="card">
-              ${cardHeader('How this demo works')}
-              <ol class="how-list">
-                <li>${icon('route')}<span>A lightweight <strong>intent router</strong> classifies your question (no LLM is connected).</span></li>
-                <li>${icon('cpu')}<span>It calls the <strong>same services</strong> as every page — optimizer, simulator, segmentation, portfolio analytics.</span></li>
-                <li>${icon('message-square-text')}<span>Responses are assembled from those calculated values, so numbers always match the dashboards.</span></li>
-              </ol>
-              <p class="muted small">In the production design, an LLM (e.g. Gemini or Claude) would call these services as tools.</p>
-            </section>
-            <section class="card">
               ${cardHeader('Supported intents')}
               <div class="intent-tags">${INTENTS.map((i) => `<span class="intent-tag">${i}</span>`).join('')}</div>
             </section>
@@ -2114,11 +2105,11 @@ __pq_define('pages/customers.js', function (__exports) {
       const s = getState();
       el.innerHTML = `
         ${pageHeader('Customer Intelligence', 'Explore illustrative customer segments and purchasing behaviour.')}
-        <div class="notice">${icon('info')}<span><strong>Illustrative segments.</strong> These four groups are built from simulated RFM-style characteristics (recency, frequency, monetary value) for ${fmtNum(getDataset().customers.length)} synthetic customers. They represent the proposed K-Means segmentation component — no clustering model has been trained yet, and real clusters may differ.</span></div>
+        
         <div class="segment-cards" id="cu-cards"></div>
         <div class="grid grid-12">
           <section class="card span-4">
-            ${cardHeader('Customer Distribution', 'Share of synthetic customers by segment')}
+            ${cardHeader('Customer Distribution', 'Share of customers by segment')}
             <div class="chart chart-sm" id="cu-donut"></div>
           </section>
           <section class="card span-8">
@@ -2364,7 +2355,7 @@ __pq_define('pages/forecast.js', function (__exports) {
               </section>
             </div>
             <section class="card">
-              ${cardHeader('Historical Weekly Unit Sales', `Synthetic history · ${fmtDate(getDataset().meta.historyStart)} – ${fmtDate(getDataset().meta.asOf)} · not a forecast`)}
+              ${cardHeader('Historical Weekly Unit Sales', `Historical Data · ${fmtDate(getDataset().meta.historyStart)} – ${fmtDate(getDataset().meta.asOf)} · not a forecast`)}
               <div class="chart chart-sm" id="fc-hist"></div>
             </section>
           </div>
@@ -2947,7 +2938,7 @@ __pq_define('pages/overview.js', function (__exports) {
         <section class="card kpi-panel" id="ov-kpis"><div class="kpi-grid">${skeletonCards(6)}</div></section>
         <div class="grid grid-12">
           <section class="card span-8">
-            ${cardHeader('Revenue & Gross Profit Trend', 'Synthetic historical sales · aggregated from product × week × segment records', segmented('ov-gran', [{ value: 'week', label: 'Weekly' }, { value: 'month', label: 'Monthly' }], local.granularity))}
+            ${cardHeader('Revenue & Gross Profit Trend', 'Historical sales · aggregated from product × week × segment records', segmented('ov-gran', [{ value: 'week', label: 'Weekly' }, { value: 'month', label: 'Monthly' }], local.granularity))}
             <div class="chart chart-lg" id="ov-trend"><div class="chart-skeleton"></div></div>
           </section>
           <section class="card span-4">
@@ -2956,7 +2947,7 @@ __pq_define('pages/overview.js', function (__exports) {
           </section>
         </div>
         <section class="card">
-          ${cardHeader('Key Insights', 'Computed from the synthetic dataset and the shared pricing engine')}
+          ${cardHeader('Key Insights')}
           <div class="insight-cards" id="ov-insights"></div>
         </section>
         <section class="card">
